@@ -1,5 +1,6 @@
 ﻿#include "ProtocolPackageConsoleReader.h"
 #include "ProtocolPackageParser.h"
+#include <iostream>
 
 /// <summary> Грешка при изчитане на входните данни от кознолата </summary>
 #define ERROR_READ_INPUT_FROM_CONSOLE   -1
@@ -14,6 +15,8 @@ int main()
 
     Protocol* pProtocolResult = new Protocol();
     CProtocolPackageParser().ProtocolParse( pData, nDataBytesCount, pProtocolResult );
+
+    pProtocolResult->DisplayData();
 
     delete[] pData;
     delete pProtocolResult;

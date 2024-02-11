@@ -98,6 +98,7 @@ bool CProtocolPackageParser::ParseSizeAndIdentifier( const char*& pCurrentChar, 
     }
 
     // Вземаме първите 4 бита за брой байтове със същински данни
+    // mask 0XF = 00001111
     pResult->numDataBytes = ( ( nCombinedHex >> 4 ) & 0xF );
 
     // Вземаме следващите 4 бита за идентификатор на пакета
